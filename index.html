@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokeMemory</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <p class="eyebrow">JS Vanilla · Memory</p>
+      <h1 class="brand">PokeMemory</h1>
+      <p class="tagline">Encuentra las parejas de Pokémon</p>
+    </header>
+
+    <main>
+      <form id="user-form" class="panel register-panel">
+        <h2>Registro</h2>
+        <p class="panel-note">Entra para jugar y aparecer en el ranking.</p>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" required autocomplete="username" placeholder="Tu nombre de entrenador">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder="tu@email.com">
+
+        <button type="submit">Entrar</button>
+      </form>
+
+      <section id="game" class="game hidden" hidden>
+        <aside class="game-left">
+          <form id="game-form" class="panel game-controls">
+            <div class="control-row">
+              <div class="control-field">
+                <label for="cards-number">Número de cartas</label>
+                <input id="cards-number" name="cards-number" type="number" min="2" step="2" required placeholder="Ej: 8">
+              </div>
+              <button id="play-btn" type="submit">Jugar</button>
+            </div>
+          </form>
+
+          <div class="timer-wrap">
+            <span class="timer-label">Tiempo</span>
+            <p id="timer" class="timer" aria-live="polite">0m 0s</p>
+          </div>
+
+          <div id="game-board" class="game-board" aria-label="Tablero de juego"></div>
+        </aside>
+
+        <aside class="game-right">
+          <div id="ranking" class="panel ranking">
+            <h2>Ranking</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Posició</th>
+                    <th>Username</th>
+                    <th>Mail</th>
+                    <th>Temps</th>
+                    <th>Cartes</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+          <button id="logout-btn" type="button">Logout</button>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="modal">
+    <form method="dialog" class="modal-content">
+      <p id="modal-message">Error</p>
+      <button type="submit">Cerrar</button>
+    </form>
+  </dialog>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+</html>
